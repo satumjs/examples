@@ -61,9 +61,17 @@ const loader = loading => render({ loading });
     {
       name: 'vue3',
       entry: '//localhost:7105',
-      container: '#subapp-viewport',
       loader,
+      container: '#subapp-viewport',
       activeRule: '/vue3',
+      /* rules: {
+        rule: '/vue3',
+        container: '#subapp-viewport',
+        blocks: [{
+          path: '/react15',
+          container: '.hello-content'
+        }]
+      } */
     },
   ],
   {
@@ -103,12 +111,17 @@ const loader = loading => render({ loading });
  */
 // setDefaultMountApp('/react16');
 
-use(midwareQiankunSandbox, { useQiankunStart: true/* useLooseSandbox: true */ });
+use((sysmtem, _, next) => {
+  sysmtem.set('processUrlOption', { whiteList: ['cdn.bootcss.com'] });
+  next();
+});
+
+use(midwareQiankunSandbox, { useQiankunStart: true/* , useLooseSandbox: true */ });
 
 /**
  * Step4 启动应用
  */
-start();
+start({ ignoreFileRule: '.hot-update.js' });
 
 /* runAfterFirstMounted(() => {
   console.log('[MainApp] first app mounted');

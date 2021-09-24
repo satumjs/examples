@@ -25,6 +25,7 @@ module.exports = {
   },
   // 自定义webpack配置
   configureWebpack: {
+    devtool: 'source-map',
     resolve: {
       alias: {
         '@': resolve('src'),
