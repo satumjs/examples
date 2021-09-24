@@ -24,8 +24,8 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "@satumjs/core": "^0.0.2",
-    "@satumjs/midware-qiankun-sandbox": "^0.0.2",
+    "@satumjs/core": "~0.0.2",
+    "@satumjs/midware-qiankun-sandbox": "0.0.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "vue": "^2.6.11",
