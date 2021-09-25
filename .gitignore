@@ -8,3 +8,5 @@ coverage/
 *bak*
 .DS_Store
 yarn-error.log
+.cache
+dist
