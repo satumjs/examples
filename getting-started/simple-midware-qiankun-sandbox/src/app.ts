@@ -7,6 +7,7 @@ register({
   rules: {
     rule: '/',
     container: '#mountNode',
+    endtype: 'none',
   },
 });
 
