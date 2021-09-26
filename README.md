@@ -10,4 +10,5 @@
 
 ## 功能
 
-- [使用`区块`的例子](./block)，使 cnpm 和 @icatjs/micro 宣传文章合并在一个页面。
+- [使用`layout`的例子](./layout)，使 todomvc 和 [vklife 404](https://vklife.fun/blog/404)合并在一个页面。
+- [使用`区块`的例子](./block)，使 cnpm 和 [@icatjs/micro 宣传文章](https://vklife.fun/blog/archives/62/)合并在一个页面。
