@@ -1,5 +1,5 @@
-# a block example
+# a layout example
 
 use layout capability to merge diff pages
 
-![](./cnpm_post.png)
+![](./todo_404.png)
