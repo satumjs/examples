@@ -1,7 +1,7 @@
 import { register, start } from '@satumjs/core';
 
 register([{
-  name: 'seeconf',
+  name: 'cnpm',
   entry: 'https://cnpmjs.org/package/@icatjs/micro',
   rules: {
     rule: '/',
