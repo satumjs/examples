@@ -1,6 +1,6 @@
-# simple
+# simple-midware-single-spa
 
-A simple example for satum-micro
+A simple-midware-single-spa example for satum-micro
 
 # usage
 

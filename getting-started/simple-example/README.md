@@ -1,4 +1,4 @@
-# simple
+# simple example
 
 A simple example for satum-micro
 
