@@ -12,17 +12,6 @@ use((system, _, next) => {
   next();
 });
 
-use((system, _, next) => {
-  system.set('processUrl', (source, fileUrl) => {
-    // rewrite css file content, you also can process other type file in processCode midware
-    if (fileUrl.includes('.css')) {
-      return 'body{font-size: 12px; color: red}';
-    }
-    return source;
-  });
-  next();
-});
-
 register([
   {
     name: 'satum',
