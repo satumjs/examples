@@ -1,0 +1,15 @@
+{
+  "name": "custom-midware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "@satumjs/core": "^0.0.5-rc.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
