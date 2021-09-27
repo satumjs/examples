@@ -1,6 +1,6 @@
 # simple example
 
-A simple example for satum-micro
+A simple example for custom-midware
 
 # usage
 
@@ -14,4 +14,4 @@ yarn install
 
 Now open [http://localhost:1234/](http://localhost:1234/) in your browser.
 
-you can find 
+you can find [http://www.firefox.com.cn](http://www.firefox.com.cn) page css rewiten
