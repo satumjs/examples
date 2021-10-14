@@ -2,7 +2,7 @@ import { register, start } from "@satumjs/core";
 
 register([
   {
-    name: "react00",
+    name: "multiple",
     entry: [
       'https://www.baidu.com/',
       'https://www.hao123.com/',
