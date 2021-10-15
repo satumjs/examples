@@ -4,9 +4,8 @@ register([
   {
     name: "multiple",
     entry: [
-      'https://www.baidu.com/',
-      'https://www.hao123.com/',
-
+      'https://www.aliyun.com/',
+      'https://vklife.fun/blog/archives/62/',
     ],
     rules: {
       rule: "/",
