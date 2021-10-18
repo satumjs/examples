@@ -1,16 +1,15 @@
 // @ts-check
-import reactPlugin from 'vite-plugin-react'
+import reactPlugin from '@vitejs/plugin-react'
 
 /**
  * @type { import('vite').UserConfig }
  */
 const config = {
-  jsx: 'react',
   plugins: [reactPlugin],
-  cors: {
-    origin: '*'
+  server: {
+    // hmr: false,
+    cors: { origin: '*' }
   }
-  
 }
 
 export default config
