@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "@satumjs/core": "^0.0.6-experimental.2",
+    "@satumjs/midware-interceptor": "^0.0.1",
+    "@satumjs/midware-microcode": "^0.0.2-rc.0",
+    "@satumjs/midware-sandbox": "^0.0.2-rc.2",
+    "@satumjs/midware-single-spa": "^0.0.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
