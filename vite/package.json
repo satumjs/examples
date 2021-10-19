@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "init": "yarn clean && yarn install && npm-run-all init:*",
-    "init:main": "cd main && yarn install",
-    "init:vite": "cd react-demo && yarn install",
+    "prestart": "yarn clean && yarn install && npm-run-all prestart:*",
+    "prestart:main": "cd main && yarn install",
+    "prestart:vite": "cd react-demo && yarn install",
     "clean": "rm -rf **/node_modules",
     "start": "run-p start:*",
     "start:main": "cd main && yarn start",
