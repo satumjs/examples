@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "dependencies": {
+    "@satumjs/core": "latest"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
