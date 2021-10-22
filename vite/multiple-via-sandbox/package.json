@@ -2,11 +2,13 @@
   "scripts": {
     "initial": "yarn clean && yarn install && npm-run-all initial:*",
     "initial:main": "cd main && yarn install",
-    "initial:vite": "cd react-demo && yarn install",
-    "clean": "rm -rf **/node_modules",
+    "initial:react": "cd react-demo && yarn install",
+    "initial:vue3": "cd vue3-demo && yarn install",
+    "clean": "rm -rf **/node_modules **/yarn.lock",
     "start": "run-p start:*",
     "start:main": "cd main && yarn start",
-    "start:vite": "cd react-demo && yarn dev"
+    "start:react": "cd react-demo && yarn dev",
+    "start:vue3": "cd vue3-demo && yarn dev"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"

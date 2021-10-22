@@ -2,14 +2,13 @@
 
 A simple-midware-single-spa example for satum-micro
 
-# usage
+## usage
 
 ```bash
-# npm
-npm install
+# npm or yarn
+npm install # yarn install
 
-# or yarn
-yarn install
+npm start
 ```
 
 Now open [http://localhost:1234/](http://localhost:1234/) in your browser.

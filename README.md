@@ -22,4 +22,5 @@
 - [跨应用共享组件]，做到应用间 UI 共享，提升重用性。
 - [三方库共享]，应用间共享三方库，减少重复加载。
 - vite 支持示例
-  - [vite 单例模式](./vite/simple-via-singleton-mode)，通过单例模式支持加载 vite 项目。
+  - [vite 单例模式](./vite/simple-via-singleton-mode)，通过单例模式支持加载 vite 项目。注意该模式**内置的弱沙箱会失效**。
+  - [vite 多实例模式](./vite/multiple-via-sandbox)，通过沙箱支持多个 vite 应用同时激活。
