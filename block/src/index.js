@@ -1,8 +1,10 @@
-import { register, start } from '@satumjs/core';
+// @ts-check
+import { register, start, use } from '@satumjs/core';
+import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register([{
   name: 'cnpm',
-  entry: 'https://cnpmjs.org/package/@icatjs/micro',
+  entry: 'https://npmmirror.com/package/@icatjs/micro',
   rules: {
     rule: '/',
     container: '#mountNode',
@@ -19,5 +21,7 @@ register([{
     container: '#mountNode',
   }
 }]);
+
+use(singleSpaMidware);
 
 start();

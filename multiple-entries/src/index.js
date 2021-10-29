@@ -1,4 +1,6 @@
-import { register, start } from "@satumjs/core";
+// @ts-check
+import { register, start, use } from "@satumjs/core";
+import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register([
   {
@@ -13,5 +15,11 @@ register([
     },
   }
 ]);
+
+use(singleSpaMidware);
+use((sys, _, next) => {
+  sys.set('processUrlOption', { whiteList: ['g.alicdn.com', /\/(api|abs|delivery|adPlan|rest)/] });
+  next();
+});
 
 start();

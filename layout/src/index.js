@@ -1,8 +1,11 @@
-import { register, start } from '@satumjs/core';
+// @ts-check
+import { register, start, use } from '@satumjs/core';
+import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register([{
   name: 'vue-todomvc',
   entry: 'https://todomvc.com/examples/vue/',
+  // @ts-ignore
   history: 'hash',
   rules: {
     rule: '/',
@@ -17,5 +20,7 @@ register([{
     container: '#mountNode',
   }
 }]);
+
+use(singleSpaMidware);
 
 start();

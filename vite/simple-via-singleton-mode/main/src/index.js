@@ -1,5 +1,6 @@
 // @ts-check
 import { register, start, use } from '@satumjs/core';
+import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register({
   name: 'vite',
@@ -20,6 +21,8 @@ use((sys, apps, next) => {
     });
   })
   next();
-})
+});
+
+use(singleSpaMidware);
 
 start();
