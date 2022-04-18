@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+      header .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        background-color: #aaa;
+      }
+      header .main-nav li {
+        display: block;
+        margin: 0 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="javascript:history.pushState(null, '', '/')">首页</a></li>
+        <li>
+          <a href="javascript:history.pushState(null, '', '/store')">
+            芯片商城
+          </a>
+        </li>
+      </ul>
+    </header>
+    <div id="mountNode"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
