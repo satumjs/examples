@@ -5,7 +5,7 @@
   "dependencies": {
     "@satumjs/core": "latest",
     "@satumjs/midware-single-spa": "latest",
-    "@satumjs/simple-midwares": "^0.0.8"
+    "@satumjs/simple-midwares": "latest"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5"

@@ -1,6 +1,9 @@
 // @ts-check
 import { register, start, use } from '@satumjs/core';
+import { simpleSandboxMidware } from '@satumjs/simple-midwares';
 import singleSpaMidware from '@satumjs/midware-single-spa';
+
+function noop() {}
 
 register([{
   name: 'cnpm',
@@ -22,6 +25,7 @@ register([{
   }
 }]);
 
+use(simpleSandboxMidware, { docVariable(k) { if (k === 'write') return noop; } });
 use(singleSpaMidware);
 
-start();
+start({ ignoreFileRule: ['cnzz.com', 'aplus_v2'] });
