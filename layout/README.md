@@ -1,5 +1,5 @@
 # a layout example
 
-use layout capability to merge diff pages
+use layout capability to merge diff pages from multiple websites.
 
-![](./todo_404.png)
+![](./zhihu_todo.jpg)
