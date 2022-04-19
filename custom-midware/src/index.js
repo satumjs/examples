@@ -1,8 +1,8 @@
-import { register, start, use } from '@satumjs/core';
+import { register, start, use, MidwareName } from '@satumjs/core';
 
 
 use((system, _, next) => {
-  system.set('processCode', (source, fileUrl) => {
+  system.set(MidwareName.code, (source, fileUrl) => {
     // rewrite css file content, you can process other type file in processCode midware
     if (fileUrl.includes('.css')) {
       return 'body{font-size: 12px; color: red}';
