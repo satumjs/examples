@@ -12,7 +12,7 @@ let history = null;
 
 function render(props = {}) {
   const { container } = props;
-  history = createWebHistory(window.__POWERED_BY_QIANKUN__ || window.DRIVE_BY_SATUMMICRO ? '/vue3' : '/');
+  history = createWebHistory(window.__POWERED_BY_QIANKUN__ ? '/vue3' : '/');
   router = createRouter({
     history,
     routes,
@@ -24,12 +24,12 @@ function render(props = {}) {
   instance.mount(container ? container.querySelector('#app') : '#app');
 }
 
-if (!window.__POWERED_BY_QIANKUN__ && !window.DRIVE_BY_SATUMMICRO) {
+if (!window.__POWERED_BY_QIANKUN__) {
   render();
 }
 
 export async function bootstrap() {
-  console.log('%c ', 'color: green;', 'vue3.0 app bootstraped');
+  console.log('%c%s', 'color: green;', 'vue3.0 app bootstraped');
 }
 
 function storeTest(props) {

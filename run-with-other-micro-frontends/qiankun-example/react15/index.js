@@ -33,6 +33,6 @@ export async function unmount(props) {
   );
 }
 
-if (!window.__POWERED_BY_QIANKUN__ && !window.DRIVE_BY_SATUMMICRO) {
+if (!window.__POWERED_BY_QIANKUN__) {
   bootstrap().then(mount);
 }

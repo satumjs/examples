@@ -1,6 +1,7 @@
 import 'zone.js'; // for angular subapp
-import { register as registerMicroApps, use, start } from '@satumjs/core';
-import midwareQiankunSandbox from '@satumjs/midware-qiankun-sandbox';
+import { MidwareName, register as registerMicroApps, start, use } from '@satumjs/core';
+import { simpleSandboxMidware } from '@satumjs/simple-midwares';
+import singleSpaMidware from '@satumjs/midware-single-spa';
 import './index.less';
 
 /**
@@ -21,7 +22,7 @@ const loader = loading => render({ loading });
  * Step2 注册子应用
  */
 
- registerMicroApps(
+registerMicroApps(
   [
     {
       name: 'react16',
@@ -61,68 +62,28 @@ const loader = loading => render({ loading });
     {
       name: 'vue3',
       entry: '//localhost:7105',
-      loader,
       container: '#subapp-viewport',
+      loader,
       activeRule: '/vue3',
-      /* rules: {
-        rule: '/vue3',
-        container: '#subapp-viewport',
-        blocks: [{
-          path: '/react15',
-          container: '.hello-content'
-        }]
-      } */
     },
   ],
-  {
-    beforeLoad: [
-      app => {
-        console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
-      },
-    ],
-    beforeMount: [
-      app => {
-        console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
-      },
-    ],
-    afterUnmount: [
-      app => {
-        console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
-      },
-    ],
-  },
 );
 
-/* const { onGlobalStateChange, setGlobalState } = initGlobalState({
-  user: 'qiankun',
-}); */
-
-// onGlobalStateChange((value, prev) => console.log('[onGlobalStateChange - master]:', value, prev));
-
-/* setGlobalState({
-  ignore: 'master',
-  user: {
-    name: 'master',
-  },
-}); */
-
-/**
- * Step3 设置默认进入的子应用
- */
-// setDefaultMountApp('/react16');
-
-use((sysmtem, _, next) => {
-  sysmtem.set('processUrlOption', { whiteList: ['cdn.bootcss.com'] });
+use((system, _, next) => {
+  system.set(MidwareName.urlOption, { whiteList: ['jquery.min.js'] });
   next();
 });
 
-use(midwareQiankunSandbox, { useQiankunStart: true/* , useLooseSandbox: true */ });
+use(simpleSandboxMidware, {
+  winVariable(k, fakeWin) {
+    if (k === '__INJECTED_PUBLIC_PATH_BY_QIANKUN__') {
+      return fakeWin['assetPublicPath'];
+    }
+  }
+});
+use(singleSpaMidware);
 
 /**
- * Step4 启动应用
+ * Step3 启动应用
  */
-start({ ignoreFileRule: '.hot-update.js' });
-
-/* runAfterFirstMounted(() => {
-  console.log('[MainApp] first app mounted');
-}); */
+start();

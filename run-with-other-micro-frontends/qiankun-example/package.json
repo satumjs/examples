@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "examples:install": "npm-run-all --serial install:*",
+    "examples:start": "npm-run-all --parallel start:*",
+    "examples:start-multiple": "run-p start-main-multiple start:react15 start:vue",
+    "install:main": "cd ./main && yarn",
+    "start:main": "cd ./main && yarn start",
+    "start-main-multiple": "cd ./main && yarn start:multiple",
+    "install:react16": "cd ./react16 && yarn",
+    "start:react16": "cd ./react16 && yarn start",
+    "install:react15": "cd ./react15 && yarn",
+    "start:react15": "cd ./react15 && yarn start",
+    "install:vue": "cd ./vue && yarn",
+    "start:vue": "cd ./vue && yarn start",
+    "install:angular9": "cd ./angular9 && yarn",
+    "start:angular9": "cd ./angular9 && yarn serve:qiankun",
+    "install:purehtml": "cd ./purehtml && yarn",
+    "start:purehtml": "cd ./purehtml && yarn start",
+    "install:vue3": "cd ./vue3 && yarn",
+    "start:vue3": "cd ./vue3 && yarn start"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
