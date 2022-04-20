@@ -1,5 +1,5 @@
 // @ts-check
-import { register, start, use } from '@satumjs/core';
+import { register, start, use, MidwareName } from '@satumjs/core';
 import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register({
@@ -12,7 +12,7 @@ register({
 });
 
 use((sys, apps, next) => {
-  sys.set('domChange', (appName, mountNode) => {
+  sys.set(MidwareName.domChange, (appName, mountNode) => {
     mountNode.querySelectorAll('img').forEach(el => {
       const src = el.getAttribute('src');
       const { assetPublicPath } = apps.find(item => item.name === appName);
