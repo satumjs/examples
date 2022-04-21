@@ -10,7 +10,7 @@
 
 - [配置路径规则 rules]，基于规则会计算应用间的依赖，进而支持多个应用同时激活，或一个应用同时多次激活。
 - [配置过滤文件规则]，支持配置规则过滤应用中的资源文件，比如应用独立运行时依赖的三方库，在微前端加载时可从其他应用中共享，进而需要忽略。
-- [使用`layout`的例子](./layout)，使 todomvc 和 [404](https://vklife.fun/blog/404) 合并在一个页面。
+- [使用`layout`的例子](./layout)，使 zhihu 和 todomvc 合并在一个页面。
 - [使用`区块`的例子](./block)，使 cnpm 和 [@icatjs/micro post](https://vklife.fun/blog/archives/62/) 合并在一个页面。
 
 ## 进阶功能
@@ -22,5 +22,5 @@
 - [跨应用共享组件]，做到应用间 UI 共享，提升重用性。
 - [三方库共享]，应用间共享三方库，减少重复加载。
 - vite 支持示例
-  - [vite 单例模式](./vite/simple-via-singleton-mode)，通过单例模式支持加载 vite 项目。注意该模式**内置的弱沙箱会失效**。
+  - [vite 单例模式](./vite/simple-via-singleton-mode)，通过单例模式支持加载 vite 项目。
   - [vite 多实例模式](./vite/multiple-via-sandbox)，通过沙箱支持多个 vite 应用同时激活。

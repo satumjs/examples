@@ -3,7 +3,7 @@
     "initial": "yarn clean && yarn install && npm-run-all initial:*",
     "initial:main": "cd main && yarn install",
     "initial:vite": "cd react-demo && yarn install",
-    "clean": "rm -rf **/node_modules",
+    "clean": "rm -rf ./node_modules yarn.lock **/node_modules **/yarn.lock ./main/.cache ./main/dist",
     "start": "run-p start:*",
     "start:main": "cd main && yarn start",
     "start:vite": "cd react-demo && yarn dev"
