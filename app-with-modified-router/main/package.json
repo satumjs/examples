@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "parcel src/index.html --open"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@satumjs/core": "latest",
+    "@satumjs/midware-thead-occ": "latest"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
