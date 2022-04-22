@@ -12,7 +12,8 @@ function App() {
         }}
       >
         <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
+        <Link to="/expenses">Expenses</Link> |{" "}
+        <Link to="/npm-satumjs">npm-satumjs</Link>
       </nav>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

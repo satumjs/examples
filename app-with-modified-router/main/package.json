@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "parcel src/index.html"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

@@ -1,18 +1,29 @@
 // @ts-check
 import '@babel/polyfill';
-import { register, start, use, MidwareName } from '@satumjs/core';
+import { register, start, use, MidwareName, defaultCrossRuleLabel } from '@satumjs/core';
 import theadOccMidware from '@satumjs/midware-thead-occ';
 
-register({
+register([{
   name: 'react',
   entry: 'http://localhost:3000/',
   rules: {
     rule: '/',
     container: '#mountNode'
   },
-});
+}, {
+  name: 'npm-satumjs',
+  entry: 'https://www.npmjs.com/~satumjs',
+  rules: {
+    rule: '/npm-satumjs',
+    container: '#subMountNode', //#mountNode
+    layout: '/invoices'
+  }
+}]);
 
 use((sys, apps, next) => {
+  sys.set(MidwareName.urlOption, {
+    crossRule: `https://vklife.fun/proxy?target=${defaultCrossRuleLabel}`,
+  });
   sys.set(MidwareName.domChange, (appName, mountNode) => {
     mountNode.querySelectorAll('img').forEach(el => {
       const src = el.getAttribute('src');
