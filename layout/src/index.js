@@ -1,5 +1,5 @@
 // @ts-check
-import { register, start, use, HistoryType, MidwareName, defaultCrossRuleLabel, actorTagAttrAppName } from '@satumjs/core';
+import { register, start, use, HistoryType, MidwareName, crossRuleLabel, actorTagAttrAppName } from '@satumjs/core';
 import { simpleSandboxMidware, simpleCssScopeMidware } from '@satumjs/simple-midwares';
 import singleSpaMidware from '@satumjs/midware-single-spa';
 
@@ -23,7 +23,7 @@ register([{
 
 use((system, _, next) => {
   system.set(MidwareName.urlOption, {
-    crossRule: `https://vklife.fun/proxy?target=${defaultCrossRuleLabel}`
+    crossRule: `https://vklife.fun/proxy?target=${crossRuleLabel}`
   });
   next();
 });

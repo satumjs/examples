@@ -1,6 +1,6 @@
 // @ts-check
 import '@babel/polyfill';
-import { register, start, use, MidwareName, defaultCrossRuleLabel } from '@satumjs/core';
+import { register, start, use, MidwareName, crossRuleLabel } from '@satumjs/core';
 import theadOccMidware from '@satumjs/midware-thead-occ';
 
 register([{
@@ -22,7 +22,7 @@ register([{
 
 use((sys, apps, next) => {
   sys.set(MidwareName.urlOption, {
-    crossRule: `https://vklife.fun/proxy?target=${defaultCrossRuleLabel}`,
+    crossRule: `https://vklife.fun/proxy?target=${crossRuleLabel}`,
   });
   sys.set(MidwareName.domChange, (appName, mountNode) => {
     mountNode.querySelectorAll('img').forEach(el => {
