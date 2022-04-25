@@ -1,5 +1,5 @@
 // @ts-check
-import { register, start, use, HistoryType, MidwareName, crossRuleLabel, actorTagAttrAppName } from '@satumjs/core';
+import { register, start, use, HistoryType, MidwareName, crossRuleLabel, fakeTagName, fakeWrapTagName } from '@satumjs/core';
 import { simpleSandboxMidware, simpleCssScopeMidware } from '@satumjs/simple-midwares';
 import singleSpaMidware from '@satumjs/midware-single-spa';
 
@@ -29,7 +29,7 @@ use((system, _, next) => {
 });
 
 use(simpleSandboxMidware);
-use(simpleCssScopeMidware, { getScopeRule: (appName) => `[${actorTagAttrAppName}="${appName}"] :not(x-satum-micro)` });
+use(simpleCssScopeMidware, { getScopeRule: (appName) => `[${fakeTagName}="${appName}"] :not(${fakeWrapTagName})` });
 use(singleSpaMidware);
 
 start({ ignoreFileRule: 'wza/aria.js' });
