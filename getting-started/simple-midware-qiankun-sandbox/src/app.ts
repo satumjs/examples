@@ -1,18 +1,19 @@
-import { register, start, use } from '@satumjs/core';
+import { register, start, use, MidwareName } from '@satumjs/core';
 import midwareQiankunSandbox from '@satumjs/midware-qiankun-sandbox';
 
 register({
-  name: 'occ-mobile',
-  entry: 'https://render.alipay.com/p/w/occ-mobile/index.html',
+  name: 'store',
+  entry: 'https://render.alipay.com/p/w/occ-appstore/index.html',
   rules: {
     rule: '/',
     container: '#mountNode',
-    endtype: 'none',
   },
 });
 
 use((system, _, next) => {
-  system.set('processUrlOption', { whiteList: ['/api'] });
+  system.set(MidwareName.urlOption, {
+    whiteList: ['/api', 'gw.alipayobjects.com'],
+  });
   next();
 });
 
