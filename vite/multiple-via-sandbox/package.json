@@ -4,7 +4,7 @@
     "initial:main": "cd main && yarn install",
     "initial:react": "cd react-demo && yarn install",
     "initial:vue3": "cd vue3-demo && yarn install",
-    "clean": "rm -rf **/node_modules **/yarn.lock",
+    "clean": "rm -rf **/node_modules **/yarn.lock node_modules yarn.lock",
     "start": "run-p start:*",
     "start:main": "cd main && yarn start",
     "start:react": "cd react-demo && yarn dev",
