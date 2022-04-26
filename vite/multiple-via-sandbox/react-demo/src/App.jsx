@@ -25,9 +25,11 @@ function App() {
           >
             Learn React
           </a> */}
-          <a className="App-link" rel="noopener noreferrer" href="/vue3">
+          {location.pathname.includes('/vue3') ? <a className="App-link" rel="noopener noreferrer" href="/">
+            Backto React
+          </a>: <a className="App-link" rel="noopener noreferrer" href="/vue3">
             Goto Vue3
-          </a>
+          </a>}
         </p>
       </header>
     </div>

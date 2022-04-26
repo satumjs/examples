@@ -1,5 +1,7 @@
 // @ts-check
-import { register, start, use } from '@satumjs/core';
+import '@babel/polyfill';
+import { register, start, use, MidwareName } from '@satumjs/core';
+import { mountNodeMidware } from '@satumjs/simple-midwares';
 import sandboxMidware from '@satumjs/midware-sandbox';
 import microCodeMidware from '@satumjs/midware-microcode';
 import interceptorMidware from '@satumjs/midware-interceptor';
@@ -29,7 +31,7 @@ register([{
 }]);
 
 use((sys, apps, next) => {
-  sys.set('domChange', (appName, mountNode) => {
+  sys.set(MidwareName.domChange, (appName, mountNode) => {
     mountNode.querySelectorAll(`img:not([data-actor-id="${appName}"] [data-actor-id] img)`).forEach(el => {
       const src = el.getAttribute('src');
       const { assetPublicPath } = apps.find(item => item.name === appName);
@@ -40,6 +42,7 @@ use((sys, apps, next) => {
   next();
 });
 
+use(mountNodeMidware)
 use(sandboxMidware);
 use(microCodeMidware, { simple: true, ableLocationProxy: true });
 use(interceptorMidware);

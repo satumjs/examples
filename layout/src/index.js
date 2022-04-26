@@ -32,4 +32,4 @@ use(simpleSandboxMidware);
 use(simpleCssScopeMidware, { getScopeRule: (appName) => `[${fakeTagName}="${appName}"] :not(${fakeWrapTagName})` });
 use(singleSpaMidware);
 
-start({ ignoreFileRule: 'wza/aria.js' });
+start({ ignoreFileRule: ['hm.js', 'aria.js'] });
