@@ -1,6 +1,6 @@
 // @ts-check
 import '@babel/polyfill';
-import { register, start, use, MidwareName, crossRuleLabel } from '@satumjs/core';
+import { register, start, use, MidwareName, corsRuleLabel } from '@satumjs/core';
 import theadOccMidware from '@satumjs/midware-thead-occ';
 
 register([{
@@ -21,9 +21,7 @@ register([{
 }]);
 
 use((sys, apps, next) => {
-  sys.set(MidwareName.urlOption, {
-    crossRule: `https://vklife.fun/proxy?target=${crossRuleLabel}`,
-  });
+  sys.set(MidwareName.urlOption, { corsRule: `https://thingproxy.freeboard.io/fetch/${corsRuleLabel}` });
   sys.set(MidwareName.domChange, (appName, mountNode) => {
     mountNode.querySelectorAll('img').forEach(el => {
       const src = el.getAttribute('src');

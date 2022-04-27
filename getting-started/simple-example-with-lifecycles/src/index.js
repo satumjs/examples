@@ -1,4 +1,5 @@
-import { register, start } from '@satumjs/core';
+// @ts-check
+import { register, start, use, MidwareName, corsRuleLabel } from '@satumjs/core';
 
 register({
   name: 'store',
@@ -7,6 +8,11 @@ register({
     rule: '/store',
     container: '#mountNode'
   },
+});
+
+use((sys, _, next) => {
+  sys.set(MidwareName.urlOption, { corsRule: `https://thingproxy.freeboard.io/fetch/${corsRuleLabel}` });
+  next();
 });
 
 start();

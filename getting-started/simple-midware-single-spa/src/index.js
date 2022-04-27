@@ -1,4 +1,4 @@
-import { MidwareName, HistoryType, register, start, use, crossRuleLabel } from '@satumjs/core';
+import { MidwareName, HistoryType, register, start, use, corsRuleLabel } from '@satumjs/core';
 import { simpleSandboxMidware } from '@satumjs/simple-midwares';
 import midwareSingleSpa from '@satumjs/midware-single-spa';
 
@@ -14,7 +14,7 @@ register({
 
 use((system, _, next) => {
   system.set(MidwareName.urlOption, {
-    crossRule: `https://vklife.fun/proxy?target=${crossRuleLabel}`
+    corsRule: `https://thingproxy.freeboard.io/fetch/${corsRuleLabel}`
   });
   next();
 });

@@ -1,4 +1,4 @@
-import { start, use, MidwareName, crossRuleLabel, NextFn } from '@satumjs/core';
+import { start, use, MidwareName, corsRuleLabel, NextFn } from '@satumjs/core';
 import {
   simpleSandboxMidware,
   interceptorMidware,
@@ -8,7 +8,7 @@ import { IMicroApp, MidwareSystem } from '@satumjs/types';
 use((system, _, next) => {
   system.set(MidwareName.urlOption, {
     whiteList: ['/api', 'gw.alipayobjects.com'],
-    crossRule: `https://ptgproxy-office.alipay.net/proxy?target=${crossRuleLabel}`,
+    corsRule: `https://thingproxy.freeboard.io/fetch/${corsRuleLabel}`,
   });
   next();
 });

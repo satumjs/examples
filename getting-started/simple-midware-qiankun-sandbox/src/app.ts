@@ -1,4 +1,10 @@
-import { register, start, use, MidwareName } from '@satumjs/core';
+import {
+  register,
+  start,
+  use,
+  MidwareName,
+  corsRuleLabel,
+} from '@satumjs/core';
 import midwareQiankunSandbox from '@satumjs/midware-qiankun-sandbox';
 
 register({
@@ -13,6 +19,7 @@ register({
 use((system, _, next) => {
   system.set(MidwareName.urlOption, {
     whiteList: ['/api', 'gw.alipayobjects.com'],
+    corsRule: `https://thingproxy.freeboard.io/fetch/${corsRuleLabel}`,
   });
   next();
 });
