@@ -1,5 +1,4 @@
 // @ts-check
-import '@babel/polyfill';
 import { register, start, use, MidwareName } from '@satumjs/core';
 import { mountNodeMidware } from '@satumjs/simple-midwares';
 import sandboxMidware from '@satumjs/midware-sandbox';
