@@ -8,7 +8,7 @@ import singleSpaMidware from '@satumjs/midware-single-spa';
 
 register([{
   name: 'vite-react',
-  entry: 'http://localhost:3000/',
+  entry: 'http://localhost:3020/',
   rules: {
     rule: '/',
     container: '#mountNode',
@@ -43,7 +43,7 @@ use((sys, apps, next) => {
 
 use(mountNodeMidware)
 use(sandboxMidware);
-use(microCodeMidware, { simple: true, ableLocationProxy: true });
+use(microCodeMidware, { simple: true, proxyLocation: true });
 use(interceptorMidware);
 use(singleSpaMidware);
 

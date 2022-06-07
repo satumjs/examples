@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "parcel src/index.html --open"
+    "start": "vite"
   },
   "dependencies": {
     "@satumjs/core": "latest",
@@ -11,6 +11,6 @@
     "@satumjs/simple-midwares": "latest"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "vite": "^2.6.7"
   }
 }

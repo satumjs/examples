@@ -16,6 +16,10 @@ export default {
   },
   server: {
     port: 3030,
+    hmr: {
+      protocol: 'ws',
+      host: '127.0.0.1',
+    },
     proxy: {
       '/foo': 'http://localhost:4567/foo',
       '/api': {

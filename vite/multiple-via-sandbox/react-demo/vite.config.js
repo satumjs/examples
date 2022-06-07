@@ -7,7 +7,12 @@ import reactPlugin from '@vitejs/plugin-react'
 const config = {
   plugins: [reactPlugin],
   server: {
+    port: 3020,
     // hmr: false,
+    hmr: {
+      protocol: 'ws',
+      host: '127.0.0.1',
+    },
     cors: { origin: '*' }
   }
 }
