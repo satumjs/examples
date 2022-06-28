@@ -14,8 +14,7 @@
 </template>
 
 <script lang="ts">
-import { reactive, ref } from '@vue/reactivity'
-import { watchEffect, nextTick} from '@vue/runtime-core'
+import { reactive, ref, watchEffect } from 'vue'
 export default {
     setup(){
         const count = ref(0)

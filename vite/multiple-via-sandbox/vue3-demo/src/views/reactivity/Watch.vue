@@ -9,8 +9,7 @@
 </template>
 
 <script lang="ts">
-import { effect, reactive, ref } from '@vue/reactivity'
-import { nextTick, watch } from '@vue/runtime-core'
+import { reactive, ref, nextTick, watch } from 'vue'
 export default {
     setup(){
         const count = ref(0)
