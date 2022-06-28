@@ -12,8 +12,7 @@
 </template>
 
 <script lang="ts">
-import { isRef, reactive, isReactive, toRaw, toRefs, shallowReactive } from '@vue/reactivity'
-import { watchEffect } from '@vue/runtime-core'
+import { isRef, reactive, isReactive, toRaw, toRefs, shallowReactive, watchEffect } from 'vue'
 export default {
     setup(){
         const obj = { count: 0 }

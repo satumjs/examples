@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { computed, ref } from '@vue/reactivity'
+import { computed, ref } from 'vue'
 export default {
     setup(){
         const count = ref(1)

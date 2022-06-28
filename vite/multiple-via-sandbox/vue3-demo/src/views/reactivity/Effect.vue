@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-    import {effect, reactive, ref, stop} from '@vue/reactivity'
+    import {effect, reactive, ref, stop} from 'vue'
 
     export default {
         setup() {
